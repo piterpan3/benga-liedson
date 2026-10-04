@@ -1,0 +1,8 @@
+{
+  "name": "benga-envios-vercel",
+  "version": "2.0.0",
+  "private": true,
+  "description": "BENGA ENVIOS — Vercel deployment",
+  "engines": { "node": ">=24 <25" },
+  "dependencies": { "@vercel/blob": "2.6.1" }
+}

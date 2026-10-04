@@ -1,0 +1,15 @@
+BENGA ENVIOS — CORREÇÃO DO ERRO 500
+
+Erro corrigido:
+FUNCTION_INVOCATION_FAILED em /api/*
+
+Causa encontrada:
+A versão anterior ativava o acesso ao Vercel Blob quando BENGA_USE_BLOB=1 mesmo sem store/token disponível, e a exceção subia até a função Vercel. Além disso, o servidor local procurava index.html em /public apesar de o deploy Vercel ter index.html na raiz.
+
+Correções:
+1. Blob falhar -> fallback seguro em vez de 500.
+2. Root estático servido a partir da raiz.
+3. pacote sem pasta embrulhada: index.html fica na raiz do ZIP.
+4. Node 24.x.
+5. API em api/[...route].mjs.
+6. Base limpa.
